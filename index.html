@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Music by Alex — acoustic loop covers for weddings, pubs and bars</title>
+<meta name="description" content="Solo acoustic loop-station covers: stripped-back acoustic versions of songs you know, built live. Weddings, pubs and bars across the North West.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Karla:wght@400;500;700&family=Caveat:wght@500;700&display=swap">
+<style>
+:root{
+  --night:#1C1C1E; --deep:#121214; --smoke:#26262A; --line:#3A3A3E; --edge:#6A6A6E;
+  --chalk:#F0E6D2; --muted:#BDB3A1; --orange:#E07A3F; --rust:#9C4416; --ink:#3A362F;
+  --serif:"Fraunces", Georgia, serif; --sans:"Karla", system-ui, sans-serif; --hand:"Caveat", cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--night);color:var(--chalk);font-family:var(--sans);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--chalk)} a:hover{color:var(--orange)}
+img,svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(34px,4.2vw,52px);line-height:1.08}
+em.o{font-style:italic;color:var(--orange)}
+.hand{font-family:var(--hand);font-weight:700;color:var(--orange);line-height:1}
+.muted{color:var(--muted)}
+.ph{border-bottom:1.5px dashed currentColor;opacity:.85}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 26px;border-radius:999px;font:700 17px var(--sans);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease, background .15s ease, color .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.btn-orange{background:var(--orange);color:var(--night)} .btn-orange:hover{color:var(--night);background:#EA8B53}
+.btn-ghost{border-color:var(--chalk);color:var(--chalk);background:transparent} .btn-ghost:hover{background:var(--chalk);color:var(--night)}
+.btn-dark{background:var(--night);color:var(--chalk)} .btn-dark:hover{color:var(--orange)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(28,28,30,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--chalk)}
+.brand .w{display:flex;flex-direction:column;line-height:1}
+.brand .w b{font-size:12px;letter-spacing:3px}
+.wordmark{display:block;line-height:0}
+.wordmark svg{width:190px;height:auto}
+@media (max-width:420px){.wordmark svg{width:128px}.brand{gap:8px}.brand .stamp svg{width:44px;height:44px}.bar{gap:8px}.menu-btn{padding:8px 12px}.menu-btn .mt{display:none}}
+nav.main{display:flex;align-items:center;gap:22px;font-size:16px;font-weight:500}
+nav.main a{text-decoration:none;padding:10px 0}
+nav.main a.btn{padding:12px 22px;color:var(--night)}
+.bar-cta{display:none;min-height:44px;padding:8px 16px;font-size:15px;margin-left:auto}
+.menu-btn{display:none;background:none;border:2px solid var(--chalk);color:var(--chalk);border-radius:999px;min-height:44px;padding:8px 16px;font:700 15px var(--sans);cursor:pointer}
+@media (max-width:860px){
+  .bar-cta{display:inline-flex}
+  .menu-btn{display:inline-flex;align-items:center;gap:8px}
+  nav.main a.btn{display:none}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--night);border-bottom:1px solid var(--line);padding:8px 24px 20px}
+  nav.main.open{display:flex}
+  nav.main a{padding:14px 0;border-bottom:1px solid var(--line)}
+  nav.main a.btn{margin-top:14px;border-bottom:none}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:min(76vh,680px);display:flex;align-items:center;padding:72px 0 40px}
+.hero-photo{position:absolute;inset:0;z-index:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:72% 30%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--night) 0%,rgba(28,28,30,.93) 30%,rgba(28,28,30,.5) 52%,rgba(28,28,30,0) 78%),
+  linear-gradient(180deg,var(--night) 0%,rgba(28,28,30,0) 16%,rgba(28,28,30,0) 70%,var(--night) 100%)}
+.hero .grid{position:relative;z-index:1;width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:56px}
+.hero .copy{max-width:600px}
+@media (max-width:860px){
+  .hero{align-items:flex-end;min-height:0;padding:320px 0 28px}
+  .hero-photo{inset:0 0 auto 0;height:460px}
+  .hero-photo img{object-position:68% 18%}
+  .hero-photo::after{background:linear-gradient(180deg,var(--night) 0%,rgba(28,28,30,0) 12%,rgba(28,28,30,.25) 55%,var(--night) 92%)}
+}
+.reelsec{padding:0 0 88px}
+.reelsec .wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+.reelsec .reel{flex:none;width:100%;max-width:920px}
+.reelsec .hand{font-size:30px;margin:0}
+.reelsec .wrap{padding-top:0}
+.hero .copy{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.hero .copy .hand{font-size:30px;transform:rotate(-1.5deg);transform-origin:left}
+.hero h1{font-size:clamp(42px,6vw,78px);line-height:1.02;letter-spacing:-.03em}
+.hero p.lead{margin:0;font-size:20px;color:var(--muted);max-width:540px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.reel{flex:1 1 500px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.reel a.screen{position:relative;aspect-ratio:16/9;background:var(--smoke);border:0;border-radius:20px;box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-decoration:none;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
+iframe.screen{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:20px;background:#000}
+.reel .bg-stamp{position:absolute;right:-60px;bottom:-60px;opacity:.12;pointer-events:none}
+.reel .play{width:92px;height:92px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;position:relative}
+.reel .play::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid var(--orange);opacity:.6;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{transform:scale(.9);opacity:.7}to{transform:scale(1.35);opacity:0}}
+.reel a.screen{overflow:hidden;padding:0}
+.reel a.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 30%;filter:brightness(.62)}
+.reel a.screen:hover img{filter:brightness(.78)}
+.reel .label{font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.reel .note{margin:0;font-size:15px;color:var(--muted)}
+
+/* glance */
+.glance{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0}
+.glance .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 40px}
+.glance div{display:flex;flex-direction:column}
+.glance strong{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.1;color:var(--orange)}
+.glance span{font-size:16px;color:var(--muted)}
+
+/* loop builder */
+.how{padding:96px 0}
+.how .head{max-width:720px;display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.looper{display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.looper .viz{flex:1 1 340px;display:flex;justify-content:center}
+.looper svg.rings{width:min(420px,100%);height:auto;overflow:visible}
+.ring{fill:none;stroke-linecap:round;transform-origin:210px 210px;transition:opacity .4s ease, stroke .4s ease}
+.ring.off{opacity:.14}
+.ring.on{opacity:1}
+.ring.spin{animation:spin 4s linear infinite}
+.ring.spin.slow{animation-duration:8s}
+.playhead{transform-origin:210px 210px;opacity:0;transition:opacity .3s}
+.playhead.on{opacity:1;animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.ring.spin,.playhead.on,.reel .play::after{animation:none}}
+.looper .steps{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.step{display:flex;align-items:flex-start;gap:18px;width:100%;text-align:left;background:var(--smoke);border:2px solid transparent;border-radius:20px;padding:20px 22px;color:var(--chalk);font:inherit;cursor:pointer;transition:border-color .2s, background .2s}
+.step:hover{border-color:var(--edge)}
+.step[aria-pressed="true"]{border-color:var(--orange);background:#2E2A28}
+.switch{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:var(--deep);border:3px solid var(--edge);display:flex;align-items:center;justify-content:center;font:700 26px var(--hand);color:var(--muted);transition:all .2s}
+.step[aria-pressed="true"] .switch{border-color:var(--orange);color:var(--night);background:var(--orange);box-shadow:0 0 18px rgba(224,122,63,.55)}
+.step h3{font-size:24px;margin-bottom:2px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+.looper .controls{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:6px}
+.status{font-size:15px;color:var(--muted)}
+.status b{color:var(--orange)}
+
+/* offers */
+.offers{padding:0 0 96px}
+.offers .wrap{display:flex;flex-wrap:wrap;gap:32px}
+.card{flex:1 1 440px;min-width:0;border-radius:24px;padding:40px;display:flex;flex-direction:column;gap:16px}
+.card h2{font-size:46px;line-height:1}
+.card ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.card .price{margin:0;font-family:var(--serif);font-size:22px;font-weight:600}
+.card .btn{align-self:flex-start}
+.card.light{background:var(--chalk);color:var(--night)}
+.card.light .hand{color:var(--rust);font-size:28px}
+.card.light p{color:var(--ink);margin:0}
+.card.dark{background:var(--smoke);border:2px solid var(--chalk);box-shadow:8px 8px 0 var(--orange)}
+.card.dark .hand{font-size:28px}
+.card.dark p{margin:0}
+.card.dark .price{color:var(--orange)}
+
+/* songs */
+.songs{background:var(--smoke);padding:88px 0}
+.songs .wrap{display:flex;flex-direction:column;gap:30px}
+.songs .head{max-width:780px;display:flex;flex-direction:column;gap:10px}
+.drift{display:flex;flex-direction:column;gap:14px;overflow:hidden;padding:6px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.drift .row{display:flex;width:max-content;gap:12px;animation:drift var(--dur,200s) linear infinite;animation-direction:var(--dir,normal)}
+.drift:hover .row{animation-play-state:paused}
+.drift .row span{white-space:nowrap;border:1.5px solid rgba(240,230,210,.45);border-radius:999px;padding:9px 18px;font-size:16px}
+.drift .row b{font-weight:700;color:var(--chalk)}
+.drift .row i{font-style:normal;color:var(--muted)}
+.drift .row span:nth-child(7n+3){border-color:var(--orange)}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.drift .row{animation:none}.drift{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
+.chips li{border:1.5px solid var(--chalk);border-radius:999px;padding:10px 18px;font-size:16px}
+
+/* reviews */
+.reviews{padding:96px 0}
+.reviews .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:32px}
+figure.q{margin:0;border-top:3px solid var(--orange);padding-top:20px;display:flex;flex-direction:column;gap:14px}
+figure.q .mark{font-family:var(--serif);font-size:64px;line-height:.6;color:var(--orange)}
+figure.q blockquote{margin:0;font-family:var(--serif);font-size:21px;line-height:1.45}
+figure.q figcaption{font-size:15px;color:var(--muted)}
+
+/* about */
+.about{padding:0 0 96px}
+.about .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px}
+.photo{flex:1 1 340px;min-width:0;aspect-ratio:4/5;max-height:560px;background:var(--smoke);border:2px dashed var(--edge);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center}
+.photo{overflow:hidden;padding:0;border:0;background:var(--smoke)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:42% 40%;display:block}
+.about .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.about .txt p{margin:0;color:var(--muted)}
+.about .links{display:flex;flex-wrap:wrap;gap:8px 28px;font-weight:700}
+.about .links a{color:var(--orange);padding:8px 0}
+
+/* booking */
+.book{background:var(--orange);color:var(--night);padding:88px 0}
+.book .wrap{display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
+.book .intro{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.book h2{font-size:clamp(38px,4.6vw,60px);line-height:1.02}
+.book .intro p{margin:0}
+.book .contact{display:flex;flex-direction:column;gap:4px;font-weight:700}
+form.enquiry,.sent{flex:1.3 1 480px;min-width:0;background:var(--night);color:var(--chalk);border-radius:24px;padding:36px}
+form.enquiry{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px 20px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label,.field legend{font-weight:700;font-size:15px}
+.field input,.field textarea{font:inherit;font-size:16px;color:var(--chalk);background:var(--smoke);border:1.5px solid var(--edge);border-radius:12px;padding:12px 14px;color-scheme:dark}
+.field textarea{resize:vertical;min-height:110px}
+.field .err{font-size:14px;color:#F2A27A;min-height:0}
+.field.bad input{border-color:#F2A27A}
+fieldset.field{border:none;margin:0;padding:0}
+.types{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.types input{position:absolute;opacity:0;width:1px;height:1px}
+.types label{border:1.5px solid var(--edge);border-radius:999px;padding:10px 16px;font-weight:500;font-size:15px;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.types input:checked + label{background:var(--orange);border-color:var(--orange);color:var(--night);font-weight:700}
+.types input:focus-visible + label{outline:3px solid var(--orange);outline-offset:3px}
+form.enquiry .btn{grid-column:1/-1;justify-self:start}
+.sent{display:none;flex-direction:column;gap:16px}
+.sent.show{display:flex}
+.sent pre{margin:0;white-space:pre-wrap;font:15px/1.5 var(--sans);background:var(--smoke);border-radius:14px;padding:18px;color:var(--chalk)}
+.sent .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sent .copied{font-size:15px;color:var(--orange)}
+
+/* footer */
+footer{background:var(--deep);padding:40px 0}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+footer .l{display:flex;align-items:center;gap:14px;font-size:15px}
+footer nav{display:flex;gap:24px;font-weight:700;font-size:15px}
+footer nav a{padding:10px 0}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Live Music by Alex, back to top">
+      <span class="stamp" data-size="60" data-ink="#F0E6D2" data-bg="#1C1C1E" data-accent="#E07A3F"></span>
+      <span class="wordmark"></span>
+    </a>
+    <a class="btn btn-orange bar-cta" href="#book">Enquire</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mainnav">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="mt">Menu</span>
+    </button>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <a href="#showreel">Showreel</a>
+      <a href="#weddings">Weddings</a>
+      <a href="#pubs">Pubs &amp; bars</a>
+      <a href="#songs">Songs</a>
+      <a href="#about">About</a>
+      <a class="btn btn-orange" href="#book">Check your date</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-photo"><img src="alex-live.jpg" width="1800" height="1201" alt="Alex singing and playing acoustic guitar on stage" fetchpriority="high"></div>
+  <div class="wrap grid">
+    <div class="copy rv">
+      <p class="hand" style="margin:0">twenty years of live music</p>
+      <h1>Acoustic covers, <em class="o">built live</em>, one loop at a time.</h1>
+      <p class="lead">Solo acoustic singer-songwriter with a loop station twist, layering guitar, rhythm and harmonies on the spot, LIVE. Filling the space like a mini band and performing for weddings, pubs and bars across the North West and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reelsec">
+  <div class="wrap">
+    <p class="hand rv">see it live</p>
+    <div class="reel rv" id="showreel">
+      <iframe class="screen" src="https://www.youtube-nocookie.com/embed/VNPuJ4s5Xfg?rel=0&modestbranding=1" title="Live Music by Alex showreel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="glance" aria-label="At a glance">
+  <div class="wrap">
+    <div><strong>20 years</strong><span>playing live</span></div>
+    <div><strong>One person</strong><span>the sound of a full band</span></div>
+    <div><strong>Weddings &amp; pubs</strong><span>bars, clubs, private parties</span></div>
+    <div><strong>North West</strong><span>and happy to travel further</span></div>
+  </div>
+</section>
+
+
+<section class="offers">
+  <div class="wrap">
+    <article class="card light rv" id="weddings">
+      <span class="hand">for the big day</span>
+      <h2>Weddings</h2>
+      <p>Relaxed, heartfelt acoustic versions of songs you both love, from the ceremony to the last dance.</p>
+      <ul>
+        <li>Ceremony and signing music</li>
+        <li>Drinks reception</li>
+        <li>Wedding breakfast</li>
+        <li>Evening turnarounds</li>
+        <li>Main evening entertainment</li>
+        <li>1, 2 or up to 3 hour sets</li>
+        <li>Bespoke set lists, and happy to learn any song, however unusual</li>
+      </ul>
+      <p class="price">Packages start at £400</p>
+      <a class="btn btn-dark" href="#book" data-type="Wedding">Wedding enquiry</a>
+    </article>
+    <article class="card dark rv" id="pubs">
+      <span class="hand">for the regulars</span>
+      <h2>Pubs &amp; bars</h2>
+      <p class="muted">Big singalong songs, reworked as stripped-back acoustic loop covers that can keep the room up on their feet or bring that relaxed atmosphere.</p>
+      <ul>
+        <li>1, 2 or 3 sets of 45 minutes</li>
+        <li>PA provided</li>
+        <li>A huge range of covers, genres and styles</li>
+        <li>Low-key for restaurants and gastropubs, or upbeat and ready for a night on the town</li>
+      </ul>
+      <p class="price">Enquire for price</p>
+      <a class="btn btn-orange" href="#book" data-type="Pub or bar">Venue enquiry</a>
+    </article>
+  </div>
+</section>
+
+<section class="songs" id="songs">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Songs everyone knows, <em class="o">played like they've never heard them before</em></h2>
+      <p class="muted" style="margin:0">Famous songs stripped back to voice and acoustic guitar, then built up live. Over 260 and counting, and the full song list is sent on request.</p>
+    </div>
+    <div class="drift rv" id="drift" aria-label="A sample of the songs in the repertoire"></div>
+    <div><a class="btn btn-orange" href="#book" id="askSongs">Ask for the full song list</a></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="photo rv"><img src="about-alex.jpg" width="1400" height="933" alt="Alex singing and playing acoustic guitar under blue stage lights" loading="lazy"></div>
+    <div class="txt rv">
+      <h2>Hi, I'm <em class="o">Alex</em></h2>
+      <p>I've spent the last twenty years playing covers at weddings and in pubs, bars and clubs, reworking famous songs into stripped-back acoustic singer-songwriter versions.</p>
+      <p>Away from covers gigs, I write and release my own music as Alexander Hulme, which has been played on BBC Radio 1 and BBC Radio 6 Music. I also record other artists at Kiln Recordings, my studio in Cheshire.</p>
+      <div class="links"><a href="https://www.instagram.com/alexanderhulmemusic" target="_blank" rel="noopener">Alexander Hulme</a><a href="https://www.kilnrecordings.co.uk" target="_blank" rel="noopener">Kiln Recordings</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="intro">
+      <span class="stamp" data-size="140" data-ink="#1C1C1E" data-bg="#E07A3F" data-accent="#1C1C1E"></span>
+      <h2>Check your date</h2>
+      <p>Tell me a bit about your wedding or venue and I'll come back to you with availability and a quote.</p>
+      <div class="contact">
+        <span>Email: <a href="mailto:Alexhulmemusic@gmail.com">Alexhulmemusic@gmail.com</a></span>
+        <span>Instagram: <a href="https://www.instagram.com/livemusicbyalex" target="_blank" rel="noopener">@livemusicbyalex</a></span>
+      </div>
+    </div>
+
+    <form class="enquiry" id="enquiry" novalidate>
+      <div class="field" id="f-name-w"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+      <div class="field" id="f-email-w"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+      <div class="field" id="f-date-w"><label for="f-date">Event date</label><input id="f-date" name="date" type="date" required><span class="err" aria-live="polite"></span></div>
+      <div class="field"><label for="f-venue">Venue and town</label><input id="f-venue" name="venue" type="text"></div>
+      <fieldset class="field full">
+        <legend>Type of event</legend>
+        <div class="types">
+          <input type="radio" name="type" id="t1" value="Wedding" checked><label for="t1">Wedding</label>
+          <input type="radio" name="type" id="t2" value="Pub or bar"><label for="t2">Pub or bar</label>
+          <input type="radio" name="type" id="t4" value="Private party"><label for="t4">Private party</label>
+          <input type="radio" name="type" id="t5" value="Something else"><label for="t5">Something else</label>
+        </div>
+      </fieldset>
+      <div class="field full"><label for="f-msg">Anything else? Timings, songs you love</label><textarea id="f-msg" name="msg" rows="4"></textarea></div>
+      <button class="btn btn-orange" type="submit">Prepare my enquiry</button>
+    </form>
+
+    <div class="sent" id="sent" tabindex="-1">
+      <span class="hand" style="font-size:30px">nearly there</span>
+      <p style="margin:0">Here's your enquiry. Copy it and email it to <strong><a href="mailto:Alexhulmemusic@gmail.com">Alexhulmemusic@gmail.com</a></strong>, or send it as a message on <a href="https://www.instagram.com/livemusicbyalex" target="_blank" rel="noopener">Instagram</a>.</p>
+      <pre id="summary"></pre>
+      <div class="row">
+        <button class="btn btn-orange" id="copy">Copy enquiry</button>
+        <button class="btn btn-ghost" id="edit">Edit details</button>
+        <span class="copied" id="copied" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="l"><span class="stamp" data-size="54" data-ink="#F0E6D2" data-bg="#121214" data-accent="#E07A3F"></span><span>© <span id="yr">2026</span> Live Music by Alex · Acoustic loop covers, North West England</span></div>
+    <nav aria-label="Social">
+      <a href="https://www.instagram.com/livemusicbyalex" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtu.be/VNPuJ4s5Xfg" target="_blank" rel="noopener">YouTube</a>
+      <a href="#book" style="color:var(--orange)">Book</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---------- Ink-stamp logo (headstock in a loop) ----------
+  var n = 0;
+  var STAR = 'M0,-6 L1.76,-2.43 5.71,-1.85 2.85,0.93 3.53,4.85 0,3 -3.53,4.85 -2.85,0.93 -5.71,-1.85 -1.76,-2.43Z';
+  function inkFilter(id, seed, sc){
+    return '<filter id="'+id+'" x="-10%" y="-10%" width="120%" height="120%">'+
+      '<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="'+seed+'" result="w"/>'+
+      '<feDisplacementMap in="SourceGraphic" in2="w" scale="'+(sc||3.5)+'" xChannelSelector="R" yChannelSelector="G" result="r"/>'+
+      '<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="'+(seed+8)+'" result="g"/>'+
+      '<feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 4.6" result="s"/>'+
+      '<feComposite in="r" in2="s" operator="in"/></filter>';
+  }
+  function headstock(ink, bg){
+    var t = '';
+    [72,92,112].forEach(function(y){
+      t += '<ellipse cx="86" cy="'+y+'" rx="9" ry="6.5" fill="'+ink+'"/><rect x="93" y="'+(y-1.5)+'" width="8" height="3" fill="'+ink+'"/>';
+      t += '<ellipse cx="154" cy="'+y+'" rx="9" ry="6.5" fill="'+ink+'"/><rect x="139" y="'+(y-1.5)+'" width="8" height="3" fill="'+ink+'"/>';
+    });
+    var body = 'M98 54 Q120 47 142 54 L138 130 Q133 139 132 148 L132 192 L108 192 L108 148 Q107 139 102 130 Z';
+    var posts = '';
+    [72,92,112].forEach(function(y){ posts += '<circle cx="110" cy="'+y+'" r="3.6" fill="'+bg+'"/><circle cx="130" cy="'+y+'" r="3.6" fill="'+bg+'"/>'; });
+    return '<path d="'+body+'" fill="'+bg+'" stroke="'+bg+'" stroke-width="12"/>' + t +
+      '<path d="'+body+'" fill="'+ink+'"/>' + posts +
+      '<path d="M111.5 149 V192 M115 149 V192 M118.3 149 V192 M121.7 149 V192 M125 149 V192 M128.5 149 V192" stroke="'+bg+'" stroke-width="1.1" fill="none"/>'+
+      '<rect x="108" y="145.5" width="24" height="3.5" fill="'+bg+'"/>';
+  }
+  function stamp(size, ink, bg, accent){
+    var id = 'st'+(n++);
+    return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 240 240" aria-hidden="true" focusable="false"><defs>'+
+      inkFilter(id+'f', 3) +
+      '<path id="'+id+'t" d="M 38 120 A 82 82 0 0 1 202 120" fill="none"/>'+
+      '<path id="'+id+'b" d="M 27 120 A 93 93 0 0 0 213 120" fill="none"/></defs>'+
+      '<g filter="url(#'+id+'f)">'+
+      '<circle cx="120" cy="120" r="113" fill="none" stroke="'+ink+'" stroke-width="6"/>'+
+      '<circle cx="120" cy="120" r="104" fill="none" stroke="'+ink+'" stroke-width="1.5"/>'+
+      '<circle cx="120" cy="120" r="72" fill="none" stroke="'+ink+'" stroke-width="3"/>'+
+      '<text font-family="Karla, sans-serif" font-weight="700" font-size="15" letter-spacing="3" fill="'+ink+'"><textPath href="#'+id+'t" startOffset="50%" text-anchor="middle">LIVE MUSIC BY ALEX</textPath></text>'+
+      '<text font-family="Karla, sans-serif" font-weight="700" font-size="11.5" letter-spacing="2.4" fill="'+ink+'"><textPath href="#'+id+'b" startOffset="50%" text-anchor="middle">ACOUSTIC · LOOP · COVERS</textPath></text>'+
+      '<path transform="translate(33 120)" d="'+STAR+'" fill="'+accent+'"/><path transform="translate(207 120)" d="'+STAR+'" fill="'+accent+'"/>'+
+      '<path d="M 94 76.97 A 52 52 0 1 0 146 76.97" fill="none" stroke="'+ink+'" stroke-width="6" stroke-linecap="round"/>'+
+      '<polygon points="141.7,74.5 155.6,74.4 148.6,86.6" fill="'+accent+'"/>'+
+      '<g transform="translate(120 122) scale(0.72) translate(-120 -122)">'+ headstock(ink,bg) +'</g>'+
+      '</g></svg>';
+  }
+  var LEAF = '<g transform="translate(77.0 31.0) rotate(78.0)"><path d="M0 0 L1.3 -0.5 L2.2 -1.1 L2.7 -1.6 L2.7 -2.2 L2.4 -2.7 L2.2 -3.2 L3.5 -3.8 L4.9 -4.3 L6.2 -4.9 L7.2 -5.4 L7.6 -6.0 L7.4 -6.5 L6.6 -7.0 L5.3 -7.6 L3.9 -8.1 L4.4 -8.7 L6.1 -9.2 L7.7 -9.8 L8.9 -10.3 L9.4 -10.8 L9.1 -11.4 L8.1 -11.9 L6.7 -12.5 L5.0 -13.0 L3.6 -13.5 L4.9 -14.1 L6.3 -14.6 L7.4 -15.2 L7.9 -15.7 L7.8 -16.2 L7.1 -16.8 L5.9 -17.3 L4.4 -17.9 L3.1 -18.4 L2.8 -19.0 L3.6 -19.5 L4.2 -20.0 L4.4 -20.6 L4.3 -21.1 L3.8 -21.7 L3.1 -22.2 L2.2 -22.8 L1.4 -23.3 L0.8 -23.8 L0.8 -24.4 L0.7 -24.9 L0.4 -25.5 L0.0 -26.0 L-0.0 -26.0 L-0.4 -25.5 L-0.7 -24.9 L-0.8 -24.4 L-0.8 -23.8 L-1.4 -23.3 L-2.2 -22.8 L-3.1 -22.2 L-3.8 -21.7 L-4.3 -21.1 L-4.4 -20.6 L-4.2 -20.0 L-3.6 -19.5 L-2.8 -19.0 L-3.1 -18.4 L-4.4 -17.9 L-5.9 -17.3 L-7.1 -16.8 L-7.8 -16.2 L-7.9 -15.7 L-7.4 -15.2 L-6.3 -14.6 L-4.9 -14.1 L-3.6 -13.5 L-5.0 -13.0 L-6.7 -12.5 L-8.1 -11.9 L-9.1 -11.4 L-9.4 -10.8 L-8.9 -10.3 L-7.7 -9.8 L-6.1 -9.2 L-4.4 -8.7 L-3.9 -8.1 L-5.3 -7.6 L-6.6 -7.0 L-7.4 -6.5 L-7.6 -6.0 L-7.2 -5.4 L-6.2 -4.9 L-4.9 -4.3 L-3.5 -3.8 L-2.2 -3.2 L-2.4 -2.7 L-2.7 -2.2 L-2.7 -1.6 L-2.2 -1.1 L-1.3 -0.5 L-0.0 0.0Z" fill="#E07A3F" stroke="#E07A3F" stroke-width="0.8" stroke-linejoin="round"/><path d="M0 0 Q0.5 2.1 1.8 3.9" fill="none" stroke="#E07A3F" stroke-width="1.2" stroke-linecap="round"/><path d="M0 -0.8 L0 -23.4 M0 -3.4 L6.2 -6.1 M0 -3.4 L-6.2 -6.1 M0 -8.6 L7.7 -11.3 M0 -8.6 L-7.7 -11.3 M0 -13.8 L6.5 -16.5 M0 -13.8 L-6.5 -16.5 M0 -19.0 L3.4 -21.7 M0 -19.0 L-3.4 -21.7" fill="none" stroke="#1C1C1E" stroke-width="0.7" stroke-linecap="round"/></g>';
+  var YC = 28.7;
+  function waveD(side, ph, amp){
+    var x0 = side < 0 ? 70 : 108, x1 = side < 0 ? 2 : 178, N = 64, d = '';
+    for (var i = 0; i <= N; i++){
+      var u = i / N, x = x0 + (x1 - x0) * u, dist = Math.abs(x - x0);
+      var near = 0.35 + 0.65 * Math.min(1, dist / 14);
+      var far = u > 0.82 ? 1 - Math.pow((u - 0.82) / 0.18, 2) : 1;
+      var y = YC + amp * near * far * (0.62 * Math.sin(dist * 0.30 - ph * 2.4) + 0.38 * Math.sin(dist * 0.71 - ph * 3.7 + 1.3));
+      d += (i ? 'L' : 'M') + x.toFixed(2) + ' ' + y.toFixed(2);
+    }
+    return d;
+  }
+  function wordmark(){
+    var id = 'wm'+(n++);
+    return '<svg viewBox="0 0 190 72" aria-hidden="true" focusable="false"><defs>'+ inkFilter(id, 6, 2.2) +'</defs>'+
+      '<g filter="url(#'+id+')">'+
+      '<text x="2" y="13" textLength="176" lengthAdjust="spacing" font-family="Karla, sans-serif" font-weight="700" font-size="13" fill="#F0E6D2">LIVE MUSIC</text>'+
+      '<path class="wl" d="'+waveD(-1,0,0)+'" fill="none" stroke="#E07A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'+
+      '<path class="wr" d="'+waveD(1,0,0)+'" fill="none" stroke="#E07A3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'+
+      LEAF +
+      '<text x="2" y="68.6" textLength="176" lengthAdjust="spacing" font-family="Karla, sans-serif" font-weight="700" font-size="38" fill="#E07A3F">BY ALEX</text>'+
+      '</g></svg>';
+  }
+  document.querySelectorAll('.wordmark').forEach(function(el){ el.innerHTML = wordmark(); });
+  // Lively waving divider (stays still if the visitor has "reduce motion" on)
+  var WL = document.querySelectorAll('.wl'), WR = document.querySelectorAll('.wr');
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var AMP = still ? 0 : 3.7, SPEED = 1.5, phase = 0, lastT = 0;
+  function drawWave(){
+    var dl = waveD(-1, phase, AMP), dr = waveD(1, phase, AMP);
+    for (var i = 0; i < WL.length; i++){ WL[i].setAttribute('d', dl); WR[i].setAttribute('d', dr); }
+  }
+  drawWave();
+  if (!still){
+    (function tick(ts){
+      if (!lastT) lastT = ts;
+      var dt = ts - lastT;
+      if (dt > 33){ phase += (dt / 1000) * SPEED; lastT = ts; drawWave(); }
+      requestAnimationFrame(tick);
+    })(0);
+  }
+  document.querySelectorAll('.stamp').forEach(function(el){
+    el.innerHTML = stamp(+el.dataset.size, el.dataset.ink, el.dataset.bg, el.dataset.accent);
+  });
+
+  // ---------- Mobile menu ----------
+  var menuBtn = document.querySelector('.menu-btn'), nav = document.getElementById('mainnav');
+  menuBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if (e.target.closest('a')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
+  });
+
+  // ---------- Reveal on scroll ----------
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold: .12});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  // ---------- Enquiry form ----------
+  function $(id){ return document.getElementById(id); }
+  var form = document.getElementById('enquiry'), sent = document.getElementById('sent'), summary = document.getElementById('summary');
+  function setType(v){ var r = form.querySelector('input[name="type"][value="'+v+'"]'); if (r) r.checked = true; }
+  document.querySelectorAll('[data-type]').forEach(function(a){ a.addEventListener('click', function(){ setType(a.dataset.type); }); });
+  // Drifting song ticker
+  (function(){
+    var SONGS = [["America", "Razorlight"], ["Dancing in the Moonlight", "King Harvest"], ["Little Lion Man", "Mumford & Sons"], ["Royals", "Lorde"], ["Stick Season", "Noah Kahan"], ["Watermelon Sugar", "Harry Styles"], ["Cry Me a River", "Justin Timberlake"], ["Forget You", "CeeLo Green"], ["Shape of You", "Ed Sheeran"], ["Isn't She Lovely", "Stevie Wonder"], ["Man I Need", "Olivia Dean"], ["Put Your Records On", "Corinne Bailey Rae"], ["Jolene", "Dolly Parton"], ["Umbrella", "Rihanna"], ["Wild Thing", "The Troggs"], ["All Star", "Smash Mouth"], ["The Lazy Song", "Bruno Mars"], ["Lovely Day", "Bill Withers"], ["She Moves in Her Own Way", "The Kooks"], ["You've Got the Love", "Florence + the Machine"], ["Three Little Birds", "Bob Marley"], ["A Day Like This", "Elbow"], ["Banana Pancakes", "Jack Johnson"], ["Beautiful Day", "U2"], ["Belong Together", "Mark Ambor"], ["Better Together", "Jack Johnson"], ["Big Yellow Taxi", "Joni Mitchell"], ["Castle on the Hill", "Ed Sheeran"], ["Dakota", "Stereophonics"], ["Free Fallin'", "John Mayer"], ["Here Comes the Sun", "The Beatles"], ["Ho Hey", "The Lumineers"], ["Hotel California", "The Eagles"], ["I Try", "Macy Gray"], ["I'm a Believer", "The Monkees"], ["I'm Yours", "Jason Mraz"], ["Levitating", "Dua Lipa"], ["Iris", "Goo Goo Dolls"], ["Just the Two of Us", "Bill Withers"], ["Rehab", "Rihanna"], ["Riptide", "Vance Joy"], ["Shallow", "A Star Is Born"], ["Shotgun", "George Ezra"], ["Stand by Me", "Ben E. King"], ["Teenage Dirtbag", "Wheatus"], ["You've Got a Friend", "James Taylor"], ["You've Got a Friend in Me", "Toy Story"], ["You're Beautiful", "James Blunt"], ["5 Years Time", "Noah and the Whale"], ["7 Years", "Lukas Graham"], ["A Team", "Ed Sheeran"], ["A Thousand Years", "Christina Perri"], ["After the Gold Rush", "Neil Young"], ["Ain't No Mountain High Enough", "Marvin Gaye"], ["Ain't No Sunshine", "Bill Withers"], ["All Night Long", "AC/DC"], ["All of Me", "John Legend"], ["All the Small Things", "blink-182"], ["All You Need Is Love", "The Beatles"], ["Annie's Song", "John Denver"], ["Another Love", "Tom Odell"], ["Anti-Hero", "Taylor Swift"], ["Babylon", "David Gray"], ["Back to Black", "Amy Winehouse"], ["Blackbird", "The Beatles"], ["Beautiful Things", "Benson Boone"], ["Belter", "Gerry Cinnamon"], ["Beneath Your Beautiful", "Labrinth"], ["Bitter Sweet Symphony", "The Verve"], ["Black Horse and the Cherry Tree", "KT Tunstall"], ["Blame It on Me", "George Ezra"], ["Blank Space", "Taylor Swift"], ["Bloom", "The Paper Kites"], ["Boom Clap", "Charli XCX"], ["Brown Eyed Girl", "Van Morrison"], ["Budapest", "George Ezra"], ["No Matter What", "Callum Scott"], ["Can't Feel My Face", "The Weeknd"], ["Can't Help Falling in Love", "Elvis Presley"], ["Candy", "Paolo Nutini"], ["Champagne Supernova", "Oasis"], ["Chandelier", "Sia"], ["Chasing Cars", "Snow Patrol"], ["Cheap Thrills", "Sia"], ["Chocolate", "The 1975"], ["Clocks", "Coldplay"], ["Come as You Are", "Nirvana"], ["Complicated", "Avril Lavigne"], ["Country Roads", "Toots and the Maytals"], ["Crazy", "Gnarls Barkley"], ["Crazy in Love", "Beyoncé"], ["Dancing in the Dark", "Bruce Springsteen"], ["Dear Darlin'", "Olly Murs"], ["Dignity", "Deacon Blue"], ["Drivers License", "Olivia Rodrigo"], ["Do It Like a Dude", "Jessie J"], ["Domino", "Jessie J"], ["Don't Kill My Vibe", "Sigrid"], ["Don't Wanna Miss a Thing", "Aerosmith"], ["Dream a Little Dream of Me", "Ella Fitzgerald"], ["Dream Catch Me", "Newton Faulkner"], ["The Drugs Don't Work", "The Verve"], ["Easy", "Lionel Richie"], ["Empire State of Mind", "Alicia Keys"], ["English Rose", "Paul Weller"], ["Englishman in New York", "Sting"], ["Everybody Wants to Rule the World", "Tears for Fears"], ["Every Breath You Take", "Sting"], ["Falling Slowly", "Once"], ["Fast Car", "Tracy Chapman"], ["Feel It Coming", "Phil Collins"], ["Feeling Good", "Nina Simone"], ["Fever to the Form", "Nick Mulvey"], ["Fields of Gold", "Sting"], ["Fire and Rain", "James Taylor"], ["Firework", "Katy Perry"], ["First Day of My Life", "Bright Eyes"], ["Fix You", "Coldplay"], ["Friday I'm in Love", "The Cure"], ["Galway Girl", "Ed Sheeran"], ["Giant", "Rag'n'Bone Man"], ["Girls Like You", "Maroon 5"], ["Go Your Own Way", "Fleetwood Mac"], ["God Only Knows", "The Beach Boys"], ["Grow Old with Me", "Tom Odell"], ["Hallelujah", "Jeff Buckley"], ["Halo", "Beyoncé"], ["Handbags and Gladrags", "Stereophonics"], ["Hand in My Pocket", "Alanis Morissette"], ["Happier", "Bastille"], ["Happy", "Pharrell Williams"], ["Keep Your Head Up", "Ben Howard"], ["I Heard It Through the Grapevine", "Marvin Gaye"], ["Heartbeats", "José González"], ["Hey There Delilah", "Plain White T's"], ["Hey Ya!", "OutKast"], ["High and Dry", "Radiohead"], ["Hide Your Love Away", "The Beatles"], ["...Baby One More Time", "Britney Spears"], ["Homeward Bound", "Simon & Garfunkel"], ["Hotline Bling", "Drake"], ["Hound Dog", "Elvis Presley"], ["House of the Rising Sun", "The Animals"], ["How Long Will I Love You", "Ellie Goulding"], ["How to Save a Life", "The Fray"], ["Human", "Rag'n'Bone Man"], ["Human", "The Killers"], ["Hurt", "Johnny Cash"], ["I Wanna Dance with Somebody", "Whitney Houston"], ["I Want It That Way", "Backstreet Boys"], ["If I Could Then I Would", "The Calling"], ["Imagine", "John Lennon"], ["In My Life", "The Beatles"], ["Ironic", "Alanis Morissette"], ["I Gotta Feeling", "Black Eyed Peas"], ["Kids", "MGMT"], ["Laid", "James"], ["Landslide", "Fleetwood Mac"], ["Last Request", "Paolo Nutini"], ["Latch", "Sam Smith"], ["Learn to Fly", "Foo Fighters"], ["Let Her Go", "Passenger"], ["Let It Be", "The Beatles"], ["Lightning Bolt", "Jake Bugg"], ["Little Talks", "Of Monsters and Men"], ["Livin' on a Prayer", "Bon Jovi"], ["Lost Without You", "Ed Sheeran"], ["Love Me Like You Do", "Ellie Goulding"], ["Love Will Tear Us Apart", "Joy Division"], ["Lucky Man", "The Verve"], ["Mad World", "Michael Andrews"], ["Make You Feel My Love", "Adele"], ["Man on the Moon", "R.E.M."], ["The Man Who Can't Be Moved", "The Script"], ["Marry Me", "Train"], ["Marry You", "Bruno Mars"], ["May You Never", "John Martyn"], ["A Million Dreams", "The Greatest Showman"], ["Moondance", "Van Morrison"], ["Moves Like Jagger", "Maroon 5"], ["Mr. Brightside", "The Killers"], ["Mr. Jones", "Counting Crows"], ["Mrs. Robinson", "The Lemonheads"], ["Need the Dollar", "Aloe Blacc"], ["New Shoes", "Paolo Nutini"], ["Next to Me", "Emeli Sandé"], ["Norwegian Wood", "The Beatles"], ["Not Unusual", "Tom Jones"], ["Sit Down", "James"], ["Old Pine", "Ben Howard"], ["One Week", "Barenaked Ladies"], ["Only Love", "Ben Howard"], ["Ordinary", "Alex Warren"], ["Paradise", "Coldplay"], ["Perfect", "Ed Sheeran"], ["Pink Pony Club", "Chappell Roan"], ["Pompeii", "Bastille"], ["The Pretender", "Foo Fighters"], ["Pretty Woman", "Roy Orbison"], ["Price Tag", "Jessie J"], ["Proud Mary", "Creedence Clearwater Revival"], ["Rambling Man", "Laura Marling"], ["Remember You", "Frank Turner"], ["Ring of Fire", "Johnny Cash"], ["Same Love", "Macklemore & Ryan Lewis"], ["Say Something", "A Great Big World"], ["Set Fire to the Rain", "Adele"], ["Seven Nation Army", "The White Stripes"], ["Sex on Fire", "Kings of Leon"], ["She Will Be Loved", "Maroon 5"], ["Simply the Best", "Tina Turner"], ["Singing in My Sleep", "Semisonic"], ["(Sittin' On) The Dock of the Bay", "Otis Redding"], ["Skinny Love", "Bon Iver"], ["Smile", "Nat King Cole"], ["Someone You Loved", "Newton Faulkner"], ["Somebody That I Used to Know", "Gotye"], ["Someone Like You", "Adele"], ["Somewhere Only We Know", "The Fray"], ["Somewhere Over the Rainbow", "Judy Garland"], ["Soul Sister", "Train"], ["Stay", "Rihanna"], ["Stay with Me", "Sam Smith"], ["Stuck in the Middle with You", "Stealers Wheel"], ["Sunday Morning", "Maroon 5"], ["Sunny Afternoon", "The Kinks"], ["Superstition", "Stevie Wonder"], ["Sweet Child o' Mine", "Guns N' Roses"], ["Sweet Home Alabama", "Lynyrd Skynyrd"], ["River", "Leon Bridges"], ["Teardrop", "Massive Attack"], ["Tenerife Sea", "Ed Sheeran"], ["Tennessee Whiskey", "Chris Stapleton"], ["The Book of Love", "The Magnetic Fields"], ["The Cave", "Mumford & Sons"], ["The One", "Stereophonics"], ["The Only Exception", "Paramore"], ["The Scientist", "Coldplay"], ["There She Goes", "The La's"], ["These Days", "Jess Glynne"], ["Thinking Out Loud", "Ed Sheeran"], ["This Love", "Maroon 5"], ["Time After Time", "Cyndi Lauper"], ["Good Riddance (Time of Your Life)", "Green Day"], ["Times Like These", "Foo Fighters"], ["T.N.T.", "AC/DC"], ["To Sheila", "Smashing Pumpkins"], ["Torn", "Natalie Imbruglia"], ["Trouble", "Taylor Swift"], ["True Colors", "Cyndi Lauper"], ["Use Somebody", "Kings of Leon"], ["I Want You Back", "Jackson 5"], ["Wasn't Expecting That", "Jamie Lawson"], ["Waterfall", "The Stone Roses"], ["We Found Love", "Rihanna"], ["Welcome to the Jungle", "Guns N' Roses"], ["What Was I Made For?", "Billie Eilish"], ["When You Were Young", "The Killers"], ["Where Is the Love?", "Black Eyed Peas"], ["Why Does It Always Rain on Me?", "Travis"], ["With or Without You", "U2"], ["Wrecking Ball", "Miley Cyrus"], ["XO", "Beyoncé"], ["Yellow", "Coldplay"], ["You and Me Song", "The Wannadies"], ["Your Song", "Elton John"], ["Zombie", "The Cranberries"], ["Valerie", "The Zutons"], ["Video Killed the Radio Star", "The Buggles"]];
+    var box = document.getElementById('drift'); if (!box) return;
+    var seed = 7; function rnd(){ seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+    for (var i = SONGS.length - 1; i > 0; i--){ var j = Math.floor(rnd() * (i + 1)), t = SONGS[i]; SONGS[i] = SONGS[j]; SONGS[j] = t; }
+    var ROWS = 5, per = Math.ceil(SONGS.length / ROWS);
+    function esc(x){ return x.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+    for (var r = 0; r < ROWS; r++){
+      var part = SONGS.slice(r * per, (r + 1) * per), h = '';
+      for (var k = 0; k < 2; k++) part.forEach(function(p){ h += '<span><b>' + esc(p[0]) + '</b> <i>' + esc(p[1]) + '</i></span>'; });
+      var row = document.createElement('div'); row.className = 'row'; row.innerHTML = h;
+      row.style.setProperty('--dur', (260 + r * 38) + 's');
+      row.style.setProperty('--dir', r % 2 ? 'reverse' : 'normal');
+      box.appendChild(row);
+    }
+  })();
+  document.getElementById('askSongs').addEventListener('click', function(){
+    var m = document.getElementById('f-msg');
+    if (!/song list/i.test(m.value)) m.value = (m.value ? m.value + '\n' : '') + 'Could you send me your full song list, please?';
+  });
+  function fieldErr(id, msg){
+    var w = document.getElementById(id + '-w'); w.classList.toggle('bad', !!msg);
+    w.querySelector('.err').textContent = msg || '';
+    return !msg;
+  }
+  function fmtDate(v){
+    if (!v) return '';
+    var d = new Date(v + 'T12:00:00');
+    try { return d.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'}); } catch(e){ return v; }
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = $('f-name').value.trim(), email = $('f-email').value.trim(), date = $('f-date').value;
+    var ok = fieldErr('f-name', name ? '' : 'Please add your name.');
+    ok = fieldErr('f-email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Please add a valid email.') && ok;
+    ok = fieldErr('f-date', date ? '' : 'Please pick a date.') && ok;
+    if (!ok) { form.querySelector('.bad input').focus(); return; }
+    var type = form.querySelector('input[name="type"]:checked').value;
+    var venue = $('f-venue').value.trim(), msg = $('f-msg').value.trim();
+    var text = 'Hi Alex,\n\nI\'d like to check your availability.\n\n' +
+      'Name: ' + name + '\nEmail: ' + email + '\nDate: ' + fmtDate(date) + '\nEvent: ' + type +
+      (venue ? '\nVenue: ' + venue : '') + (msg ? '\n\n' + msg : '') + '\n\nThanks!';
+    summary.textContent = text;
+    form.style.display = 'none'; sent.classList.add('show'); sent.focus();
+    document.getElementById('copied').textContent = '';
+  });
+  document.getElementById('edit').addEventListener('click', function(){
+    sent.classList.remove('show'); form.style.display = ''; $('f-name').focus();
+  });
+  document.getElementById('copy').addEventListener('click', function(){
+    var out = document.getElementById('copied'), text = summary.textContent;
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents(summary);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      out.textContent = 'Selected: press Ctrl+C / ⌘C (or long-press) to copy.';
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){ out.textContent = 'Copied. Paste it into an email or DM.'; }, fallback);
+      } else fallback();
+    } catch(err){ fallback(); }
+  });
+  var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
